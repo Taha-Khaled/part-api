@@ -23,9 +23,7 @@ app.post("/words", (req, res) => {
         RandomWordList.push(wordList[rand]);
       }
     }
-    res.status("200").send({
-      words: RandomWordList,
-    });
+    res.status("200").send(RandomWordList);
   } else {
     res.status("418").send({
       message:
@@ -46,9 +44,7 @@ app.post("/rank", (req, res) => {
   //calculate the final rank & send it back
   finalRank = Math.round((finalRank / 30) * 10000) / 100;
   if (score) {
-    res.status("200").send({
-      rank: finalRank,
-    });
+    res.status("200").send(finalRank);
   } else
     res.status("418").send({
       message: "score is required !",
