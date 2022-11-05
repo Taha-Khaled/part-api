@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`live at ${port}`));
 //to allow communication via localhost
-app.use(cors({ origin: "http://localhost:3000/", methods: ["POST"] }));
+app.use(cors({ origin: "*", methods: ["POST"] }));
 
 app.use(express.json());
 //word api
