@@ -44,7 +44,7 @@ app.post("/rank", (req, res) => {
   //calculate the final rank & send it back
   finalRank = Math.round((finalRank / 30) * 10000) / 100;
   if (score) {
-    res.status("200").send(finalRank);
+    res.status("200").send({ rank: finalRank });
   } else
     res.status("418").send({
       message: "score is required !",
