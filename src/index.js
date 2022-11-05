@@ -1,10 +1,13 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const { wordList, scoresList } = require("./TestData.json");
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`live at ${port}`));
+//to allow communication via localhost
+app.use(cors({ origin: "http://localhost:3000/", methods: ["POST"] }));
 
 app.use(express.json());
 //word api
