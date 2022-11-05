@@ -43,7 +43,7 @@ app.post("/rank", (req, res) => {
   }
   //calculate the final rank & send it back
   finalRank = Math.round((finalRank / 30) * 10000) / 100;
-  if ( typeof score == number) {
+  if ( typeof score == "number") {
     res.status("200").send({ rank: finalRank });
   } else
     res.status("418").send({
